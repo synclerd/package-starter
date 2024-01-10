@@ -1,0 +1,23 @@
+{
+    "name": "Sample vendor configuration",
+    "description": "!!!WARNING!!! Urge existing vendors to include your package before you deploy your own. Ideally there should be only ONE vendor configuration/url that has all packages.",
+    "tutorial": "https://example.com/tutorial",
+    "support": "https://example.com/support",
+    "website": "https://example.com",
+    "packages": [
+        {
+            "manifest": "https://example.com/manifest.json",
+            "description": "A description of sample package."
+        }
+    ],
+    "cacheServers": [
+        "cache.example.com",
+        "cache.example2.com"
+    ],
+    "defaults": {
+        "packages": [
+            "https://example.com/manifest.json"
+        ],
+        "cacheServer": "cache.example.com"
+    }
+}

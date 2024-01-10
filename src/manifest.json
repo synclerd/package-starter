@@ -1,0 +1,7 @@
+{
+  "name": "Sample Package",
+  "id": "an.universally.unique.id.to.identify.your.package",
+  "version": 1,
+  "url": "https://example.com/manifest.json",
+  "type": "kosmos"
+}
