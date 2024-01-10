@@ -29,14 +29,14 @@ A started project to get started on developing a provider package. It includes s
 - Android app should install the package (uninstalls rest packages to avoid conflict) and launch search screen.
 
 #### Publishing the package
-- Upload `manifest.json` and generated package file (`index.js`/`express.json`).
+- Upload `manifest.json` and generated package file (`index.js`/`express.json`) in `./dist` directory.
 - Reach out to a vendor to include your package manifest url in their manifest (as seen in `/src/manifest.vendor.json`)
 
 #### Publishing vendor manifest
 - Only publish a vendor manifest if you are a vendor maintainer. **Do not publish** vendor manifest just for your package. 
 - Urge existing vendors to include your package before you deploy your own. Ideally there should be only ONE vendor that has all packages. 
 - Multiple vendors will confuse users and make configuration complicated. Avoid this at all cost.
-- To publish a vendor manifest, upload `/src/manifest.vendor.json`.
+- To publish a vendor manifest, upload `./dist/manifest.vendor.json`.
 - Use a url shortener (preferebly `bit.ly`) to shorten the url that can be easily typed in the app.
 - Share this shortened url to users.
 
