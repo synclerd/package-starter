@@ -3,7 +3,7 @@ import { Provider1, SamplePackage } from './../src/SamplePackage';
 
 const samplePackage = new SamplePackage();
 
-const packageManifest: PackageManifest = require('../manifest.json')
+const packageManifest: PackageManifest = require('./manifest.json')
 
 describe("SamplePackage", () => {
 
