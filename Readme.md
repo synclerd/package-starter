@@ -119,15 +119,24 @@ The expected result for this request will look like:
 
 ### Available variables
 
-This is the list of all variable that can be added.
+This is the list of all variable that can be added with examples.
 
-* title: Movie ABC
-* titleFirstLetter: S
-* imdbId
-* year
-* episodeCode (i.e. s02e06)
-* season (i.e. 02)
-* episode (i.e. 06)
+* title - Movie ABC, Show ABC
+* titleFirstLetter - M
+* imdbId - tt00..... (movie/episode/season id)
+* tmdbId - 0000 (movie/episode/season id)
+* tvdbId - 0000 (movie/episode/season id)
+* traktId - 0000 (movie/episode/season id)
+* showImdbId - tt00..... (show id)
+* showTmdbId - 0000 (show id)
+* showTvdbId - 0000 (show id)
+* showTraktId - 0000 (show id)
+* year 2020 (movie/episode/season year)
+* episodeCode - s02e06
+* seasonCode - s02
+* season - 2
+* episode - 2
+* absoluteNumber - 1
 * query
-* Title variants for different languages can be found as well. By default "title" will be replaced by the original title. If you want the french title, use "title.fr"
+* Title variants for different languages can be found as well. By default "title" will be replaced by the original title. If you want the french title, use "title.fr" (This is not implemented yet, this message will be removed when it.)
 
