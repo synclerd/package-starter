@@ -54,7 +54,7 @@ Refer to `src/express.json`
 ## Providers
 Here we have 2 providers provider1 and provider2. The first one will parse html pages while the second will use a JSON API
 
-### provider1
+### `html_parser` providers (provider1)
 
 For example, we want to look for the movie "Movie ABC" aired on 2020. Here are the steps executed to search for this query:
 
@@ -74,8 +74,8 @@ If the url returns a 200 response, Engine will parse the HTML received using htm
 
 The execution pattern for TV shows is the same. `{episodeCode}` will look like sAAeBB where AA is the season number and BB is the episode number.
 
-### provider2
-A JSON API is always preferred than parsing HTML. Here's how to search for "Movie ABC 2020" with the IMDb id: "tt1111111"
+### `json_format` providers (provider2)
+A JSON API is always preferred than parsing HTML. It is significantly faster. Here's how to search for "Movie ABC 2020" with the IMDb id: "tt1111111"
 
 This API needs a token for every request, first Engine will retrieve this token because it is dynamic and it doesn't last forever.
 
@@ -102,7 +102,11 @@ The expected result for this request will look like:
       "title":"Movie ABC 2020 By AAA",
       "seeds":100,
       "peers": 90,
-      "size":11111
+      "size":11111,
+      "hints": {
+        "filename": "Movie.ABC.2020.By.AAA.mkv",
+        "size": "11110"
+      }
     },
 
     {
@@ -116,6 +120,24 @@ The expected result for this request will look like:
  ]
 }
 ```
+
+The keys in `json_format` are mostly self explanatory.
+
+```
+"json_format": {
+    "results": "torrent_results",
+    "url": "download",
+    "title": "title",
+    "seeds": "seeders",
+    "peers": "leechers",
+    "size": "size",
+    "playbackFileName": "hints.filename",
+    "playbackFileSize": "hints.size"
+},
+```
+
+**`playbackFileName` and `playbackFileSize`** — Specify the JSON paths for the playback file name and file size. Enabling these options whenever possible is strongly recommended, as they help enhance search performance and ensure greater accuracy of metadata.
+
 
 ### Available variables
 
