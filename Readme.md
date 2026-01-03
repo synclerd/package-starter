@@ -136,7 +136,30 @@ The keys in `json_format` are mostly self explanatory.
 },
 ```
 
-**`playbackFileName` and `playbackFileSize`** — Specify the JSON paths for the playback file name and file size. Enabling these options whenever possible is strongly recommended, as they help enhance search performance and ensure greater accuracy of metadata.
+### `playbackFileName` and `playbackFileSize`
+
+These fields define the JSON paths for the playback file name and size. When accurate values are available, enabling them is **strongly recommended**, as they improve search accuracy and metadata quality.
+
+Because these properties **override all estimated values**, they must only be used when the source data is reliable. Incorrect mappings can result in misleading metadata.
+
+#### Common Misconfiguration
+
+```json
+"json_format": {
+    "results": "torrent_results",
+    "url": "download",
+    "title": "title",
+    "seeds": "seeders",
+    "peers": "leechers",
+    "size": "hints.size",
+    "playbackFileName": "hints.filename",
+    "playbackFileSize": "hints.size"
+}
+```
+
+This configuration assumes the total torrent size (`hints.size`) is equal to the playback file size, which is usually incorrect. Season packs and even single-episode or movie torrents often include multiple files (e.g., samples or extras).
+
+Only map `playbackFileSize` when the value represents the actual playback file, not the overall torrent size.
 
 
 ### Available variables
@@ -161,4 +184,5 @@ This is the list of all variable that can be added with examples.
 * absoluteNumber - 1
 * query
 * Title variants for different languages can be found as well. By default "title" will be replaced by the original title. If you want the french title, use "title.fr" (This is not implemented yet, this message will be removed when it.)
+
 
