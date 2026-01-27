@@ -136,3 +136,31 @@ This is the list of all variable that can be added with examples.
 
 ### Json ops (post processing)
 See json ops doc [./docs/json_ops.md](./docs/json_ops.md)
+
+### Hoster and Direct Sources
+
+Providers using the `json_format` schema can return **hoster** and **direct** sources in addition to magnet sources.
+
+* To generate a hoster or direct source, assign a json path to the `url` field within the `json_format` object. For example:
+
+```json
+{
+  ...
+  "json_format": {
+    ...
+    "url": "url"
+  }
+}
+```
+
+* For direct sources, the `host` field must also be assigned to a json path. This value typically corresponds to the domain portion (see json ops to extract it) of the provided URL.
+
+```json
+{
+  ...
+  "json_format": {
+    ...
+    "host": "url"
+  }
+}
+```
