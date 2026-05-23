@@ -47,4 +47,5 @@ A started project to get started on developing a provider package. It includes s
 - Build, test and publish your package using documentation above.
 
 See Express package doc [./docs/express.md](./docs/express.md)
+See managed accounts doc [./docs/managed-accounts.md](./docs/managed-accounts.md)
 
